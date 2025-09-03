@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Jogadoras - Futebol Feminino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚽ Gerenciamento de Jogadoras</h1>
+            <p>Sistema completo para cadastro e gerenciamento de jogadoras de futebol feminino</p>
+        </div>
+
+        <div class="controls">
+            <div class="search-group">
+                <label for="searchInput">Buscar por nome ou posição:</label>
+                <input type="text" id="searchInput" class="search-input" placeholder="Digite para buscar...">
+            </div>
+            
+            <div class="filter-group">
+                <label for="clubeFilter">Filtrar por clube:</label>
+                <select id="clubeFilter" class="filter-select">
+                    <option value="">Todos os clubes</option>
+                </select>
+            </div>
+            
+            <div class="sort-buttons">
+                <button class="sort-btn" onclick="sortPlayers('nome')">Ordenar por Nome</button>
+                <button class="sort-btn" onclick="sortPlayers('posicao')">Ordenar por Posição</button>
+            </div>
+        </div>
+
+        <button class="add-btn" onclick="openModal()">+ Adicionar Nova Jogadora</button>
+
+        <div id="playersContainer" class="players-grid"></div>
+    </div>
+
+    <!-- Modal -->
+    <div id="playerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Adicionar Jogadora</h2>
+            </div>
+            <form id="playerForm">
+                <div class="form-group">
+                    <label for="nome">Nome da Jogadora *</label>
+                    <input type="text" id="nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="posicao">Posição *</label>
+                    <select id="posicao" required>
+                        <option value="">Selecione uma posição</option>
+                        <option value="Goleira">Goleira</option>
+                        <option value="Zagueira">Zagueira</option>
+                        <option value="Lateral">Lateral</option>
+                        <option value="Meio-campo">Meio-campo</option>
+                        <option value="Atacante">Atacante</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="clube">Clube *</label>
+                    <input type="text" id="clube" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="foto">URL da Foto</label>
+                    <input type="url" id="foto" placeholder="https://exemplo.com/foto.jpg">
+                </div>
+                
+                <div class="stats-row">
+                    <div class="form-group">
+                        <label for="gols">Gols</label>
+                        <input type="number" id="gols" min="0" value="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="assistencias">Assistências</label>
+                        <input type="number" id="assistencias" min="0" value="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="jogos">Jogos</label>
+                        <input type="number" id="jogos" min="0" value="0">
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancelar</button>
+                    <button type="submit" class="save-btn">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
