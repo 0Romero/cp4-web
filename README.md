@@ -32,9 +32,6 @@ cp4-web/
 * Interatividade com JavaScript.
 * (Aqui você descreve o que o site faz — ex: CRUD simples, formulário, galeria de imagens, etc.)
 
-## 📸 Demonstração
-
-* **Prints ou GIFs do projeto em execução** (adicione depois).
 
 ## 👤 Autor
 
